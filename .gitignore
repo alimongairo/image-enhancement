@@ -1,10 +1,8 @@
 NAFNet/.DS_Store
-NAFNet/.idea
-NAFNet/venv
 NAFNet/logs/
 NAFNet/*results*
 NAFNet/*__pycache__*
 NAFNet/*.sh
 NAFNet/datasets
 NAFNet/basicsr.egg-info
-/.idea
+.idea
