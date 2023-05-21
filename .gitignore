@@ -5,4 +5,6 @@ NAFNet/*__pycache__*
 NAFNet/*.sh
 NAFNet/datasets
 NAFNet/basicsr.egg-info
+ShadowNet/model
+ShadowNet/*__pycache__*
 .idea
