@@ -7,6 +7,7 @@ import shutil
 
 from NAFNet.basicsr.demo import main as deblur
 from ShadowNet.main_test import main as shadowRemoval
+from DewarpingCV2.DewarpScript import main as dewarping
 
 @click.command()
 @click.argument('input_image', type=click.Path(exists=True))
@@ -34,6 +35,10 @@ def main(input_image):
 
         shadowRemoval(interim_path, interim_path, dimensions[0], dimensions[1], logger)
         shutil.copy(interim_path +'ISTD/600000/outputB/1.png', interim_image)
+
+    if classifier['dewarp']:
+        logger.info('Dewarping...')
+        dewarping(interim_image, interim_image)
 
 
 if __name__ == '__main__':
