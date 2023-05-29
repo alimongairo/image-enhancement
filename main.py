@@ -17,7 +17,7 @@ def main():
 
     input_image = './input/input.jpg'
 
-    interim_path = 'E:/Andrew/shkut/pipeline/image-enhancement/output/'
+    interim_path = './output/'
     interim_image = interim_path + 'output.jpg'
     shutil.copy(input_image, interim_image)
 

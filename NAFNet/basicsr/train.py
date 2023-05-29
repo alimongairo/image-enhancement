@@ -43,7 +43,7 @@ def parse_options(is_train=True):
     args = {
         'launcher' : 'none',
         'local_rank': 0,
-        'opt': 'E:/Andrew/shkut/pipeline/image-enhancement/NAFNet/options/test/REDS/NAFNet-width64.yml'
+        'opt': './NAFNet/options/test/REDS/NAFNet-width64.yml'
     }
 
     opt = parse(args['opt'], is_train=is_train)

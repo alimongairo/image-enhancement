@@ -103,7 +103,7 @@ class DCShadowNet(object) :
         self.disLB.load_state_dict(params['disLB'])
 
     def test(self):
-        model_list = glob(os.path.join('E:\\Andrew\\shkut\\pipeline\\image-enhancement\\ShadowNet\\', 'model', '*.pt'))
+        model_list = glob(os.path.join('../ShadowNet/', 'model', '*.pt'))
         print(f'find model in: {os.path.join(self.result_dir, self.dataset, "model", "*.pt")}')
         if not len(model_list) == 0:
             model_list.sort()
@@ -111,7 +111,7 @@ class DCShadowNet(object) :
             iter = int(model_list[-1].split('_')[-1].split('.')[0])
 
             for i in range(-1,0,1):
-                self.load(os.path.join('E:\\Andrew\\shkut\\pipeline\\image-enhancement\\ShadowNet\\', 'model'), iter)
+                self.load(os.path.join('../ShadowNet/', 'model'), iter)
                 print(" [*] Load SUCCESS")
 
                 self.genA2B.eval(), self.genB2A.eval()
