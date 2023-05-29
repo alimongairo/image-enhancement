@@ -37,7 +37,7 @@ if uploaded_file is not None:
             st.image(original_image, caption='Original image', width=250)
         with col2:
             with st.spinner('Wait for it...'):
-                pipeline()
+                pipeline(input_dir + 'input.jpg')
             st.image(inferenced_image, caption='Inferenced image', width=250)
 
 
