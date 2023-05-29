@@ -15,6 +15,8 @@ from DewarpingCV2.DewarpScript import main as dewarping
 def main(input_image):
     logger = logging.getLogger(__name__)
 
+    input_image = './input/input.jpg'
+
     interim_path = 'E:/Andrew/shkut/pipeline/image-enhancement/output/'
     interim_image = interim_path + 'output.jpg'
     shutil.copy(input_image, interim_image)
