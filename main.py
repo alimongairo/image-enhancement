@@ -12,7 +12,7 @@ from DewarpingCV2.DewarpScript import main as dewarping
 @click.command()
 # @click.argument('input_image', type=click.Path(exists=True))
 
-def main(input_image):
+def main():
     logger = logging.getLogger(__name__)
 
     input_image = './input/input.jpg'

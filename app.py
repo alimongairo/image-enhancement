@@ -1,7 +1,6 @@
 import streamlit as st
 import os
 from PIL import Image
-import time
 
 from main import main as pipeline
 
