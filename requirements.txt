@@ -2,7 +2,7 @@ addict
 future
 lmdb
 numpy
-opencv-python
+opencv-python-headless
 Pillow
 pyyaml
 requests
@@ -11,3 +11,6 @@ scipy
 tb-nightly
 tqdm
 yapf
+torch
+torchvision
+imutils
