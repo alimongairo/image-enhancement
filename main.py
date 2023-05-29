@@ -10,7 +10,7 @@ from ShadowNet.main_test import main as shadowRemoval
 from DewarpingCV2.DewarpScript import main as dewarping
 
 @click.command()
-@click.argument('input_image', type=click.Path(exists=True))
+# @click.argument('input_image', type=click.Path(exists=True))
 
 def main(input_image):
     logger = logging.getLogger(__name__)
