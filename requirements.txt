@@ -13,3 +13,6 @@ tqdm
 yapf
 torch
 torchvision
+imutils
+matplotlib
+urllib3==2.0

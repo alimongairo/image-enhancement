@@ -42,7 +42,7 @@ def main(img_path, output_path, logger):
     start_time = datetime.now()
     model.test()
     torch.cuda.synchronize()
-    print(f'time taken 256x256: {datetime.now() - start_time}')
+    print(f'time taken: {datetime.now() - start_time}')
 
 
     if model.opt['val'].get('grids', False):

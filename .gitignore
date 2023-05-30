@@ -1,10 +1,13 @@
 NAFNet/.DS_Store
 NAFNet/logs/
 NAFNet/*results*
-NAFNet/*__pycache__*
+NAFNet/**/*__pycache__*
 NAFNet/*.sh
 NAFNet/datasets
+NAFNet/experiments
 NAFNet/basicsr.egg-info
 ShadowNet/model
 ShadowNet/*__pycache__*
+__pycache__
+input
 .idea

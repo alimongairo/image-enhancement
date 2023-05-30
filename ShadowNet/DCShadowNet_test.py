@@ -81,8 +81,8 @@ class DCShadowNet(object) :
             transforms.ToTensor(),
             transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
         ])
-      
-        self.testA = ImageFolder(os.path.join('dataset', self.datasetpath, 'testA'), self.test_transform)
+
+        self.testA = ImageFolder(os.path.join(self.datasetpath, 'testA'), self.test_transform)
         self.testA_loader = DataLoader(self.testA, batch_size=1, shuffle=False)
 
         """ Define Generator, Discriminator """
@@ -103,15 +103,15 @@ class DCShadowNet(object) :
         self.disLB.load_state_dict(params['disLB'])
 
     def test(self):
-        model_list = glob(os.path.join('E:\\Andrew\\shkut\\pipeline\\image-enhancement\\ShadowNet\\', 'model', '*.pt'))
-        print(f'find model in: {os.path.join(self.result_dir, self.dataset, "model", "*.pt")}')
+        model_list = glob(os.path.join('./ShadowNet/', 'model', '*.pt'))
+        print(f'find model in: {os.path.join("./ShadowNet/", "model", "*.pt")}')
         if not len(model_list) == 0:
             model_list.sort()
             print('model_list',model_list)
             iter = int(model_list[-1].split('_')[-1].split('.')[0])
 
             for i in range(-1,0,1):
-                self.load(os.path.join('E:\\Andrew\\shkut\\pipeline\\image-enhancement\\ShadowNet\\', 'model'), iter)
+                self.load(os.path.join('./ShadowNet/', 'model'), iter)
                 print(" [*] Load SUCCESS")
 
                 self.genA2B.eval(), self.genB2A.eval()
@@ -123,6 +123,8 @@ class DCShadowNet(object) :
                 path_fakeB=os.path.join(self.result_dir, self.dataset, str(iter)+'/outputB')
                 if not os.path.exists(path_fakeB):
                     os.makedirs(path_fakeB)
+
+                print(path_fakeB)
 
                 path_realAfakeB=os.path.join(self.result_dir, self.dataset, str(iter)+'/inputA_outputB')
                 if not os.path.exists(path_realAfakeB):

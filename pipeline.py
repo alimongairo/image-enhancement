@@ -1,5 +1,3 @@
-import os
-import sys
 import cv2
 import logging
 import click
@@ -15,12 +13,12 @@ from DewarpingCV2.DewarpScript import main as dewarping
 def main(input_image):
     logger = logging.getLogger(__name__)
 
-    interim_path = 'E:/Andrew/shkut/pipeline/image-enhancement/output/'
+    interim_path = './output/'
     interim_image = interim_path + 'output.jpg'
     shutil.copy(input_image, interim_image)
 
     # to do classifier
-    classifier = {'deblur': False, 'shrem': False, 'dewarp': True}
+    classifier = {'deblur': True, 'shrem': True, 'dewarp': True}
 
     if classifier['deblur']:
         logger.info('Debluring...')

@@ -6,8 +6,8 @@ import os
 
 
 def main():
-    blur_dir = 'E:/Andrew/shkut/diplom2/NAFNet/datasets/test'
-    sharp_dir = 'E:/Andrew/shkut/diplom2/NAFNet/output'
+    blur_dir = '../NAFNet/datasets/test'
+    sharp_dir = '../NAFNet/output'
     blur_paths = []
     sharp_paths = []
     psnr_values = []
