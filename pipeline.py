@@ -18,7 +18,7 @@ def main(input_image):
     shutil.copy(input_image, interim_image)
 
     # to do classifier
-    classifier = {'deblur': True, 'shrem': True, 'dewarp': True}
+    classifier = {'deblur': False, 'shrem': False, 'dewarp': True}
 
     if classifier['deblur']:
         logger.info('Debluring...')

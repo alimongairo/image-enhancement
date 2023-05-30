@@ -46,6 +46,7 @@ def main(input_path, output_path):
 	ratio = image.shape[0] / 500.0
 	orig = image.copy()
 	image = imutils.resize(image, height=500)
+	shape0, shape1 = image.shape[0], image.shape[1]
 
 	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 	blurred = cv2.GaussianBlur(gray, (5, 5), 0)
@@ -59,6 +60,9 @@ def main(input_path, output_path):
 			lower = int(min_par * med_val)
 			upper = int(max_par * med_val)
 			edged = cv2.Canny(blurred, lower, upper)
+			# plt.imshow(edged)
+			# plt.show()
+
 
 			cnts = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
 			cnts = imutils.grab_contours(cnts)
@@ -75,7 +79,7 @@ def main(input_path, output_path):
 			try:
 				# cv2.drawContours(image, [screenCnt], -1, (0, 255, 0), 2)
 				warped = four_point_transform(orig, screenCnt.reshape(4, 2) * ratio)
-				if warped.shape[0] < 4000 or warped.shape[1] < 4000:
+				if warped.shape[0] < 0.5*shape0 or warped.shape[1] < 0.5*shape1:
 					# image = orig.copy()
 					continue
 				else:
