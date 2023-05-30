@@ -1,5 +1,3 @@
-import os
-import sys
 import cv2
 import logging
 import click
@@ -10,12 +8,10 @@ from ShadowNet.main_test import main as shadowRemoval
 from DewarpingCV2.DewarpScript import main as dewarping
 
 @click.command()
-# @click.argument('input_image', type=click.Path(exists=True))
+@click.argument('input_image', type=click.Path(exists=True))
 
-def main():
+def main(input_image):
     logger = logging.getLogger(__name__)
-
-    input_image = './input/input.jpg'
 
     interim_path = './output/'
     interim_image = interim_path + 'output.jpg'
