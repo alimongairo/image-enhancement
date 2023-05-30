@@ -98,14 +98,25 @@ def app():
                 inferred_image = Image.open(output_filename)
                 st.image(inferred_image, caption='Inferred image', width=250)
 
-        st.markdown(f'Total time: {total_time} sec')
-        st.markdown('')
-        if deblur_time:
-            st.markdown(f'Deblurring time: {deblur_time} sec')
-        if shrem_time:
-            st.markdown(f'Shadow remvoal time: {shrem_time} sec')
-        if dewarp_time:
-            st.markdown(f'Dewarping time: {dewarp_time} sec')
+        with st.container():
+            col1, col2 = st.columns(2)
+            with col1:
+                st.markdown(f'Total time: {total_time} sec')
+                st.markdown('')
+                if deblur_time:
+                    st.markdown(f'Deblurring time: {deblur_time} sec')
+                if shrem_time:
+                    st.markdown(f'Shadow remvoal time: {shrem_time} sec')
+                if dewarp_time:
+                    st.markdown(f'Dewarping time: {dewarp_time} sec')
+            with col2:
+                with open(output_filename, "rb") as file:
+                    st.download_button(
+                        label="Download image",
+                        data=file,
+                        file_name="output.jpg",
+                        mime="image/jpg"
+                    )
 
 if __name__ == '__main__':
     app()
