@@ -98,7 +98,7 @@ def app():
                 inferred_image = Image.open(output_filename)
                 st.image(inferred_image, caption='Inferred image', width=250)
 
-        st.subheader(f'Total time: {total_time} sec')
+        st.markdown(f'Total time: {total_time} sec')
         st.markdown('')
         if deblur_time:
             st.markdown(f'Deblurring time: {deblur_time} sec')
