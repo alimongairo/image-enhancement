@@ -11,8 +11,8 @@ scipy
 tb-nightly
 tqdm
 yapf
-torch
-torchvision
+torch==1.13.1
+torchvision==0.14.1
 imutils
 matplotlib
 urllib3==2.0
